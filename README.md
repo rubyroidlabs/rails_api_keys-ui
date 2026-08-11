@@ -1,6 +1,6 @@
 # rails_api_keys-ui
 
-[![CI](https://github.com/rubyroidlabs/rails_api_keys_ui/actions/workflows/ci.yml/badge.svg)](https://github.com/rubyroidlabs/rails_api_keys_ui/actions/workflows/ci.yml)
+[![CI](https://github.com/rubyroidlabs/rails_api_keys-ui/actions/workflows/ci.yml/badge.svg)](https://github.com/rubyroidlabs/rails_api_keys_ui/actions/workflows/ci.yml)
 [![Gem Version](https://badge.fury.io/rb/rails_api_keys-ui.svg?icon=si%3Arubygems&icon_color=%23ee3f2d)](https://badge.fury.io/rb/rails_api_keys-ui)
 
 Optional HTML/JSON UI for [rails_api_keys](https://github.com/rubyroidlabs/rails_api_keys): create (reveal once + copy), list active keys, revoke. Host apps draw routes for each owner mount.
