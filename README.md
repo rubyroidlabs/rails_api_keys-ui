@@ -5,6 +5,20 @@
 
 Optional HTML/JSON UI for [rails_api_keys](https://github.com/rubyroidlabs/rails_api_keys): create (reveal once + copy), list active keys, revoke. Host apps draw routes for each owner mount.
 
+## Screenshots
+
+**Create** — name and permission for a new key:
+
+![Create API key](./docs/form_demo.png)
+
+**Reveal once** — copy the raw token; it is not shown again:
+
+![Your new API key](./docs/created_demo.png)
+
+**List** — active keys with revoke:
+
+![API keys list](./docs/list_demo.png)
+
 ## What this gem includes
 
 - `rails_api_keys_ui` draw helper — nested or flat mounts, explicit owner resolution
