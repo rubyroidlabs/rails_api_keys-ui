@@ -1,0 +1,42 @@
+en:
+  rails_api_keys_ui:
+    api_keys:
+      title: "API keys"
+      description: "Create personal API keys for integrations."
+      new: "Create API key"
+      empty: "No API keys yet."
+      revoke: "Revoke"
+      revoke_confirm: "Revoke this API key? Integrations using it will stop working."
+      never_used: "Never used"
+      last_used: "Last used %{time}"
+      permission_read: "Read"
+      permission_read_write: "Read & write"
+      cancel: "Cancel"
+      form:
+        name: "Name"
+        name_placeholder: "e.g. Zapier production"
+        permission: "Permission"
+        permission_read: "Read"
+        permission_read_write: "Read & write"
+        submit: "Create API key"
+      reveal:
+        title: "Your new API key"
+        warning: "Copy this key now. You will not be able to see it again."
+        token: "API key"
+        copy: "Copy"
+        copied: "Copied to clipboard"
+        done: "Done"
+  # Lazy lookup scopes for engine controller (`t(".created")` / `t(".revoked")`)
+  rails_api_keys:
+    ui:
+      api_keys:
+        create:
+          created: "API key created. Copy it now — it won’t be shown again."
+        destroy:
+          revoked: "API key revoked."
+  # Lazy lookup when host subclasses as ApiKeysController
+  api_keys:
+    create:
+      created: "API key created. Copy it now — it won’t be shown again."
+    destroy:
+      revoked: "API key revoked."

@@ -1,0 +1,5 @@
+<%= rails_api_keys_ui_panel(
+      api_keys: @api_keys,
+      create_path: url_for(action: :create),
+      destroy_path: ->(api_key) { url_for(action: :destroy, id: api_key) }
+    ) %>

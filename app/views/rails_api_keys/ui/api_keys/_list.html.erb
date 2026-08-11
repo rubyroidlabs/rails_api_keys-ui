@@ -1,0 +1,28 @@
+<% if api_keys.any? %>
+  <div class="space-y-3">
+    <% api_keys.each do |api_key| %>
+      <div class="flex flex-col gap-3 p-4 border border-gray-200 rounded-lg sm:flex-row sm:items-center sm:justify-between">
+        <div>
+          <p class="text-sm font-medium text-gray-900"><%= api_key.name %></p>
+          <p class="mt-1 text-sm text-gray-500 font-mono"><%= api_key.token_display_prefix %>…</p>
+          <p class="mt-1 text-xs text-gray-400">
+            <%= t("rails_api_keys_ui.api_keys.permission_#{api_key.permission}") %>
+            ·
+            <% if api_key.last_used_at.present? %>
+              <%= t("rails_api_keys_ui.api_keys.last_used", time: l(api_key.last_used_at, format: :short)) %>
+            <% else %>
+              <%= t("rails_api_keys_ui.api_keys.never_used") %>
+            <% end %>
+          </p>
+        </div>
+        <%= button_to t("rails_api_keys_ui.api_keys.revoke"),
+                      destroy_path.respond_to?(:call) ? destroy_path.call(api_key) : destroy_path,
+                      method: :delete,
+                      class: "inline-flex items-center px-3 py-2 border border-red-300 rounded-md shadow-sm text-sm font-medium text-red-700 bg-white hover:bg-red-50",
+                      data: { turbo_confirm: t("rails_api_keys_ui.api_keys.revoke_confirm") } %>
+      </div>
+    <% end %>
+  </div>
+<% else %>
+  <p class="text-sm text-gray-500"><%= t("rails_api_keys_ui.api_keys.empty") %></p>
+<% end %>

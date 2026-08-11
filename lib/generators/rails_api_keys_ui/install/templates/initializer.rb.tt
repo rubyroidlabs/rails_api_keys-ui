@@ -1,0 +1,10 @@
+# frozen_string_literal: true
+
+# RailsApiKeys::UI.configure do |config|
+#   # config.parent_controller = "ApplicationController"
+#   # config.current_owner = ->(controller) { controller.current_user }
+#   # config.policy_class = "RailsApiKeys::UI::ApiKeyPolicy"
+#   # config.raw_token_flash_key = :rails_api_keys_raw_token
+#   # config.include_stylesheet = true # false if the host already styles the panel
+#   # config.authorize = ->(controller, action, record) { ... }
+# end

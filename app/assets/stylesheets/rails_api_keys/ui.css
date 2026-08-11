@@ -1,0 +1,138 @@
+/* Prebuilt styles for rails_api_keys-ui views (Tailwind-compatible class names).
+   Scoped under .rails-api-keys-ui. Override brand via --rak-ui-primary-*. */
+
+.rails-api-keys-ui {
+  --rak-ui-primary-600: #2563eb;
+  --rak-ui-primary-700: #1d4ed8;
+  --rak-ui-gray-50: #f9fafb;
+  --rak-ui-gray-200: #e5e7eb;
+  --rak-ui-gray-300: #d1d5db;
+  --rak-ui-gray-400: #9ca3af;
+  --rak-ui-gray-500: #6b7280;
+  --rak-ui-gray-700: #374151;
+  --rak-ui-gray-900: #111827;
+  --rak-ui-red-50: #fef2f2;
+  --rak-ui-red-300: #fca5a5;
+  --rak-ui-red-700: #b91c1c;
+  --rak-ui-amber-50: #fffbeb;
+  --rak-ui-amber-200: #fde68a;
+  --rak-ui-amber-700: #b45309;
+  box-sizing: border-box;
+  color: var(--rak-ui-gray-900);
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.rails-api-keys-ui *,
+.rails-api-keys-ui *::before,
+.rails-api-keys-ui *::after {
+  box-sizing: inherit;
+}
+
+.rails-api-keys-ui .hidden { display: none; }
+.rails-api-keys-ui .block { display: block; }
+.rails-api-keys-ui .flex { display: flex; }
+.rails-api-keys-ui .inline-flex { display: inline-flex; }
+.rails-api-keys-ui .flex-col { flex-direction: column; }
+.rails-api-keys-ui .flex-1 { flex: 1 1 0%; }
+.rails-api-keys-ui .items-center { align-items: center; }
+.rails-api-keys-ui .justify-center { justify-content: center; }
+.rails-api-keys-ui .justify-between { justify-content: space-between; }
+.rails-api-keys-ui .justify-end { justify-content: flex-end; }
+.rails-api-keys-ui .gap-2 { gap: 0.5rem; }
+.rails-api-keys-ui .gap-3 { gap: 0.75rem; }
+.rails-api-keys-ui .space-x-3 > :not([hidden]) ~ :not([hidden]) { margin-left: 0.75rem; }
+.rails-api-keys-ui .space-y-3 > :not([hidden]) ~ :not([hidden]) { margin-top: 0.75rem; }
+.rails-api-keys-ui .space-y-4 > :not([hidden]) ~ :not([hidden]) { margin-top: 1rem; }
+
+.rails-api-keys-ui .fixed { position: fixed; }
+.rails-api-keys-ui .relative { position: relative; }
+.rails-api-keys-ui .inset-0 { inset: 0; }
+.rails-api-keys-ui .z-10 { z-index: 10; }
+.rails-api-keys-ui .z-50 { z-index: 50; }
+.rails-api-keys-ui .overflow-y-auto { overflow-y: auto; }
+.rails-api-keys-ui .min-h-screen { min-height: 100vh; }
+.rails-api-keys-ui .w-full { width: 100%; }
+.rails-api-keys-ui .max-w-md { max-width: 28rem; }
+
+.rails-api-keys-ui .m-0 { margin: 0; }
+.rails-api-keys-ui .mt-1 { margin-top: 0.25rem; }
+.rails-api-keys-ui .mb-2 { margin-bottom: 0.5rem; }
+.rails-api-keys-ui .mb-4 { margin-bottom: 1rem; }
+.rails-api-keys-ui .mb-6 { margin-bottom: 1.5rem; }
+.rails-api-keys-ui .p-3 { padding: 0.75rem; }
+.rails-api-keys-ui .p-4 { padding: 1rem; }
+.rails-api-keys-ui .p-6 { padding: 1.5rem; }
+.rails-api-keys-ui .px-3 { padding-left: 0.75rem; padding-right: 0.75rem; }
+.rails-api-keys-ui .px-4 { padding-left: 1rem; padding-right: 1rem; }
+.rails-api-keys-ui .py-2 { padding-top: 0.5rem; padding-bottom: 0.5rem; }
+.rails-api-keys-ui .pt-4 { padding-top: 1rem; }
+.rails-api-keys-ui .pt-6 { padding-top: 1.5rem; }
+
+.rails-api-keys-ui .rounded-md { border-radius: 0.375rem; }
+.rails-api-keys-ui .rounded-lg { border-radius: 0.5rem; }
+.rails-api-keys-ui .border { border-width: 1px; border-style: solid; }
+.rails-api-keys-ui .border-transparent { border-color: transparent; }
+.rails-api-keys-ui .border-gray-200 { border-color: var(--rak-ui-gray-200); }
+.rails-api-keys-ui .border-gray-300 { border-color: var(--rak-ui-gray-300); }
+.rails-api-keys-ui .border-red-300 { border-color: var(--rak-ui-red-300); }
+.rails-api-keys-ui .border-amber-200 { border-color: var(--rak-ui-amber-200); }
+
+.rails-api-keys-ui .bg-white { background-color: #fff; }
+.rails-api-keys-ui .bg-gray-500 { background-color: rgb(107 114 128 / var(--rak-ui-bg-opacity, 1)); }
+.rails-api-keys-ui .bg-opacity-75 { --rak-ui-bg-opacity: 0.75; }
+.rails-api-keys-ui .bg-primary-600 { background-color: var(--rak-ui-primary-600); }
+.rails-api-keys-ui .bg-amber-50 { background-color: var(--rak-ui-amber-50); }
+.rails-api-keys-ui .hover\:bg-primary-700:hover { background-color: var(--rak-ui-primary-700); }
+.rails-api-keys-ui .hover\:bg-gray-50:hover { background-color: var(--rak-ui-gray-50); }
+.rails-api-keys-ui .hover\:bg-red-50:hover { background-color: var(--rak-ui-red-50); }
+
+.rails-api-keys-ui .shadow { box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1); }
+.rails-api-keys-ui .shadow-sm { box-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05); }
+.rails-api-keys-ui .shadow-xl { box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1); }
+.rails-api-keys-ui .transition-opacity { transition-property: opacity; transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1); transition-duration: 150ms; }
+
+.rails-api-keys-ui .text-xs { font-size: 0.75rem; line-height: 1rem; }
+.rails-api-keys-ui .text-sm { font-size: 0.875rem; line-height: 1.25rem; }
+.rails-api-keys-ui .text-lg { font-size: 1.125rem; line-height: 1.75rem; }
+.rails-api-keys-ui .font-medium { font-weight: 500; }
+.rails-api-keys-ui .font-mono { font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace; }
+.rails-api-keys-ui .text-white { color: #fff; }
+.rails-api-keys-ui .text-gray-400 { color: var(--rak-ui-gray-400); }
+.rails-api-keys-ui .text-gray-500 { color: var(--rak-ui-gray-500); }
+.rails-api-keys-ui .text-gray-700 { color: var(--rak-ui-gray-700); }
+.rails-api-keys-ui .text-gray-900 { color: var(--rak-ui-gray-900); }
+.rails-api-keys-ui .text-red-700 { color: var(--rak-ui-red-700); }
+.rails-api-keys-ui .text-amber-700 { color: var(--rak-ui-amber-700); }
+.rails-api-keys-ui .text-primary-600 { color: var(--rak-ui-primary-600); }
+.rails-api-keys-ui .hover\:text-gray-500:hover { color: var(--rak-ui-gray-500); }
+
+.rails-api-keys-ui .cursor-pointer { cursor: pointer; }
+
+.rails-api-keys-ui .form-input {
+  appearance: none;
+  background-color: #fff;
+  border-width: 1px;
+  border-style: solid;
+  border-color: var(--rak-ui-gray-300);
+  border-radius: 0.375rem;
+  padding: 0.5rem 0.75rem;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  color: var(--rak-ui-gray-900);
+  box-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+}
+
+.rails-api-keys-ui .form-input:focus {
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+  border-color: var(--rak-ui-primary-600);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--rak-ui-primary-600) 25%, transparent);
+}
+
+@media (min-width: 640px) {
+  .rails-api-keys-ui .sm\:flex-row { flex-direction: row; }
+  .rails-api-keys-ui .sm\:items-start { align-items: flex-start; }
+  .rails-api-keys-ui .sm\:items-center { align-items: center; }
+  .rails-api-keys-ui .sm\:justify-between { justify-content: space-between; }
+}
