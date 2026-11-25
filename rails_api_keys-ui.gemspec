@@ -39,6 +39,6 @@ Gem::Specification.new do |spec|
 
   spec.required_ruby_version = ">= 3.2.0"
   spec.add_dependency "rails", ">= 7.0"
-  spec.add_dependency "rails_api_keys", ">= 0.2.0"
+  spec.add_dependency "rails_api_keys", ">= 0.3.0"
   spec.add_dependency "stimulus-rails", ">= 1.0"
 end

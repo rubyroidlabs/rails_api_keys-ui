@@ -19,6 +19,10 @@ module RailsApiKeys
         user.present? && owner_matches_user?
       end
 
+      def update?
+        user.present? && owner_matches_user?
+      end
+
       def destroy?
         user.present? && owner_matches_user?
       end

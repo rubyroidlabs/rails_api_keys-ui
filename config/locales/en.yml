@@ -11,6 +11,10 @@ en:
       last_used: "Last used %{time}"
       permission_read: "Read"
       permission_read_write: "Read & write"
+      allowed_ips_list: "Allowed IPs: %{ips}"
+      edit_ips: "Edit IPs"
+      edit_ips_title: "Allowed IPs for %{name}"
+      save: "Save"
       cancel: "Cancel"
       form:
         name: "Name"
@@ -18,6 +22,9 @@ en:
         permission: "Permission"
         permission_read: "Read"
         permission_read_write: "Read & write"
+        allowed_ips: "Allowed IPs (optional)"
+        allowed_ips_placeholder: "203.0.113.10\n10.0.0.0/24"
+        allowed_ips_hint: "Leave blank to allow any IP. Separate IPv4/IPv6 addresses or CIDR ranges with commas or new lines."
         submit: "Create API key"
       reveal:
         title: "Your new API key"
@@ -26,17 +33,21 @@ en:
         copy: "Copy"
         copied: "Copied to clipboard"
         done: "Done"
-  # Lazy lookup scopes for engine controller (`t(".created")` / `t(".revoked")`)
+  # Lazy lookup scopes for engine controller (`t(".created")` / `t(".updated")` / `t(".revoked")`)
   rails_api_keys:
     ui:
       api_keys:
         create:
           created: "API key created. Copy it now — it won’t be shown again."
+        update:
+          updated: "Allowed IPs updated."
         destroy:
           revoked: "API key revoked."
   # Lazy lookup when host subclasses as ApiKeysController
   api_keys:
     create:
       created: "API key created. Copy it now — it won’t be shown again."
+    update:
+      updated: "Allowed IPs updated."
     destroy:
       revoked: "API key revoked."

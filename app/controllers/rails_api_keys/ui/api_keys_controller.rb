@@ -2,10 +2,10 @@
 
 module RailsApiKeys
   module UI
-    # HTML + JSON API key management (index / create / destroy).
+    # HTML + JSON API key management (index / create / update / destroy).
     class ApiKeysController < ApplicationController
       before_action :set_api_key_owner
-      before_action :set_api_key, only: :destroy
+      before_action :set_api_key, only: %i[update destroy]
 
       def index
         authorize_api_key!(:index, RailsApiKeys::ApiKey)
@@ -22,7 +22,8 @@ module RailsApiKeys
 
         api_key, raw_token = @api_key_owner.create_api_key!(
           name: api_key_params[:name],
-          permission: api_key_params[:permission]
+          permission: api_key_params[:permission],
+          allowed_ips: api_key_params[:allowed_ips]
         )
 
         respond_to do |format|
@@ -33,6 +34,27 @@ module RailsApiKeys
           format.json do
             render json: serialize_key(api_key).merge(raw_token: raw_token), status: :created
           end
+        end
+      rescue ActiveRecord::RecordInvalid => e
+        respond_to do |format|
+          format.html do
+            redirect_back_after_change alert: e.record.errors.full_messages.join(", ")
+          end
+          format.json do
+            render json: { errors: e.record.errors.full_messages }, status: :unprocessable_content
+          end
+        end
+      end
+
+      def update
+        authorize_api_key!(:update, @api_key)
+        @api_key.update!(allowed_ips: update_api_key_params[:allowed_ips])
+
+        respond_to do |format|
+          format.html do
+            redirect_back_after_change notice: t(".updated")
+          end
+          format.json { render json: serialize_key(@api_key) }
         end
       rescue ActiveRecord::RecordInvalid => e
         respond_to do |format|
@@ -102,7 +124,11 @@ module RailsApiKeys
       end
 
       def api_key_params
-        params.require(:api_key).permit(:name, :permission)
+        params.require(:api_key).permit(:name, :permission, :allowed_ips, allowed_ips: [])
+      end
+
+      def update_api_key_params
+        params.require(:api_key).permit(:allowed_ips, allowed_ips: [])
       end
 
       def raw_token_flash_key
@@ -115,7 +141,7 @@ module RailsApiKeys
 
       def mount_index_path
         path = request.path
-        path = path.sub(%r{/[^/]+\z}, "") if action_name == "destroy"
+        path = path.sub(%r{/[^/]+\z}, "") if action_name.in?(%w[update destroy])
         path
       end
 
@@ -141,6 +167,7 @@ module RailsApiKeys
           id: api_key.id,
           name: api_key.name,
           permission: api_key.permission,
+          allowed_ips: api_key.allowed_ips,
           token_display_prefix: api_key.token_display_prefix,
           last_used_at: api_key.last_used_at,
           created_at: api_key.created_at,

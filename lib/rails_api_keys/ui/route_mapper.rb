@@ -29,7 +29,7 @@ module RailsApiKeys
         )
 
         resource_options = {
-          only: %i[index create destroy],
+          only: %i[index create update destroy],
           controller: controller,
           path: path,
           defaults: { rails_api_keys_ui_mount: mount_name }

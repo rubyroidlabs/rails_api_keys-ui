@@ -16,7 +16,10 @@
       </div>
     </div>
 
-    <%= render "rails_api_keys/ui/api_keys/list", api_keys: api_keys, destroy_path: destroy_path %>
+    <%= render "rails_api_keys/ui/api_keys/list",
+               api_keys: api_keys,
+               destroy_path: destroy_path,
+               update_path: local_assigns[:update_path] || destroy_path %>
   </div>
 
   <% if raw_token.present? %>

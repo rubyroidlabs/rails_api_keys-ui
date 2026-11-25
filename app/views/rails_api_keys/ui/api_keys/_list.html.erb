@@ -14,12 +14,29 @@
               <%= t("rails_api_keys_ui.api_keys.never_used") %>
             <% end %>
           </p>
+          <% if api_key.allowed_ips.any? %>
+            <p class="mt-1 text-xs text-gray-500 font-mono">
+              <%= t("rails_api_keys_ui.api_keys.allowed_ips_list", ips: api_key.allowed_ips.join(", ")) %>
+            </p>
+          <% end %>
         </div>
-        <%= button_to t("rails_api_keys_ui.api_keys.revoke"),
-                      destroy_path.respond_to?(:call) ? destroy_path.call(api_key) : destroy_path,
-                      method: :delete,
-                      class: "inline-flex items-center px-3 py-2 border border-red-300 rounded-md shadow-sm text-sm font-medium text-red-700 bg-white hover:bg-red-50",
-                      data: { turbo_confirm: t("rails_api_keys_ui.api_keys.revoke_confirm") } %>
+        <div class="flex items-center gap-2">
+          <div data-controller="modal">
+            <button type="button"
+                    data-action="click->modal#open"
+                    class="inline-flex items-center px-3 py-2 border border-gray-300 rounded-md shadow-sm text-sm font-medium text-gray-700 bg-white hover:bg-gray-50 cursor-pointer">
+              <%= t("rails_api_keys_ui.api_keys.edit_ips") %>
+            </button>
+            <%= render "rails_api_keys/ui/api_keys/edit_ips_modal",
+                       api_key: api_key,
+                       update_path: (local_assigns[:update_path] || destroy_path).respond_to?(:call) ? (local_assigns[:update_path] || destroy_path).call(api_key) : (local_assigns[:update_path] || destroy_path) %>
+          </div>
+          <%= button_to t("rails_api_keys_ui.api_keys.revoke"),
+                        destroy_path.respond_to?(:call) ? destroy_path.call(api_key) : destroy_path,
+                        method: :delete,
+                        class: "inline-flex items-center px-3 py-2 border border-red-300 rounded-md shadow-sm text-sm font-medium text-red-700 bg-white hover:bg-red-50 cursor-pointer",
+                        data: { turbo_confirm: t("rails_api_keys_ui.api_keys.revoke_confirm") } %>
+        </div>
       </div>
     <% end %>
   </div>

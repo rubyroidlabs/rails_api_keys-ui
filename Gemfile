@@ -6,7 +6,7 @@ gemspec
 
 gem "puma"
 gem "sqlite3"
-gem "rails_api_keys", "~> 0.2.0"
+gem "rails_api_keys", "~> 0.3.0"
 
 group :development, :test do
   gem "rspec-rails"

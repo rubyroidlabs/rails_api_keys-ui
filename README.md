@@ -22,7 +22,7 @@ Optional HTML/JSON UI for [rails_api_keys](https://github.com/rubyroidlabs/rails
 ## What this gem includes
 
 - `rails_api_keys_ui` draw helper — nested or flat mounts, explicit owner resolution
-- `RailsApiKeys::UI::ApiKeysController` — HTML + JSON `index` / `create` / `destroy`
+- `RailsApiKeys::UI::ApiKeysController` — HTML + JSON `index` / `create` / `update` / `destroy` (including optional `allowed_ips` allowlist)
 - Tailwind-compatible markup + shipped scoped stylesheet (no host Tailwind required)
 - Embeddable panel partial/helper
 - Generators for install, controllers, views, and locales
@@ -105,8 +105,9 @@ Brand colors for the shipped stylesheet: set `--rak-ui-primary-600` / `--rak-ui-
 
 ## JSON
 
-- `GET …/api_keys.json` — active keys (no raw tokens)
-- `POST …/api_keys.json` — creates key; response includes `raw_token` once
+- `GET …/api_keys.json` — active keys (includes `allowed_ips`, no raw tokens)
+- `POST …/api_keys.json` — creates key (accepts optional `allowed_ips`); response includes `raw_token` once
+- `PATCH …/api_keys/:id.json` — updates `allowed_ips` on an active key
 - `DELETE …/api_keys/:id.json` — revokes; `204`
 
 ## Development
